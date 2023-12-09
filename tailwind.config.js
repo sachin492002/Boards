@@ -3,21 +3,6 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {},
-    colors: {
-      'blue': '#1fb6ff',
-      'purple': '#7e5bef',
-      'pink': '#ff49db',
-      'orange': '#ff7849',
-      'green': '#13ce66',
-      'yellow': '#ffc82c',
-      'gray-dark': '#273444',
-      'gray': '#8492a6',
-      'gray-light': '#d3dce6',
-      'brownie': '#8F4F07',
-      'creamy':'#F3E4C7',
-      'slaty':'#E6EFF4',
-      'skyblue':'#73BFF3',
-    },
   },
   plugins: [],
 }

@@ -1,17 +1,18 @@
 import {AiOutlineClose} from "react-icons/ai";
-import {BsPlus} from "react-icons/bs";
+
 import {useState} from "react";
 import {useDispatch} from "react-redux";
-import {setboards, setblogsModalOpen} from "../Store/boardReducer";
+import {setBoards, setBoardsModalOpen} from "../Store/boardReducer";
 
-export default function AddBlogs() {
+export default function AddBoards() {
     const colors = ['--clr-board-1','--clr-board-2','--clr-board-3','--clr-board-4']
-    const [blog,setName] = useState('');
+    const [blog,setName] = useState({title:'vacation',color:'--clr-board-1'});
+    
     const [activeColor,setActiveColor]=useState(null);
     const dispatch = useDispatch();
     function handleClick() {
-        dispatch(setBlogs({title:blog,color:activeColor}));
-        dispatch(setblogsModalOpen(false));
+        dispatch(setBoards({title:blog,color:activeColor}));
+        dispatch(setBoardsModalOpen(false));
         console.log({title:blog,color:activeColor,'bookmark':false})
     }
     function handleChange(event){
@@ -21,7 +22,7 @@ export default function AddBlogs() {
           setActiveColor(color);
     }
     function hnadleSubmitted(){
-        dispatch(setblogsModalOpen(false))
+        dispatch(setBoardsModalOpen(false))
     }
 
     return(
@@ -32,7 +33,7 @@ export default function AddBlogs() {
                           <p className='text-xl font-bold'>Add a name for your board</p>
                               <AiOutlineClose className='text-xl text-[var(--clr-icon)] font-bold cursor-pointer' onClick={hnadleSubmitted}/>
                           </div>
-                          <input required className='w-full py-2 border rounded-md border-2 border-[var(--clr-border)] outline-0' value={blog.name} onChange={handleChange}/>
+                          <input required className='w-full py-2 border rounded-md border-2 border-[var(--clr-border)] outline-0 '  value={"vaction"} onChange={handleChange}/>
                           <div className='flex flex-col'>
                               <p className='text-xl font-bold'>Select post colour</p>
                               <p className='text-sm'>Here are some templates to help you get started</p>
